@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/detail_fragment"
+        android:layout_height="match_parent"
+        android:layout_width="270dp"
+        tools:context=".DetailActivity" />
+
+    <!-- works as divider between two fragments -->
+    <View
+        android:id="@+id/two_pane_view"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_dark_background"/>
+
+    <LinearLayout
+        android:id="@+id/video_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:id="@+id/exo_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+        </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_empty_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_margin="12dp"
+            app:cardElevation="8dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/recipe_name_background"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    android:id="@+id/tv_video_not_present"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/recipe_name_color"
+                    android:text="@string/video_not_available"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_margin="12dp"
+            app:cardElevation="8dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/recipe_name_background"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/recipe_name_color"
+                    android:text="Description"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+</LinearLayout>
